@@ -1,0 +1,116 @@
+/*styles for header*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #02103a;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 20px;
+
+}
+
+.menu::before {
+    content: "\2630";
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 8px;
+}
+
+
+.logo-text {
+    color: #ffffff;
+}
+
+.search {
+    cursor: pointer;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.dropdown {
+    font-size: 12px;
+}
+
+.location {
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    padding: 5px 10px;
+    width: 300px;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.search-button {
+    background-color: #00103a;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-button:hover {
+    background-color: #e74c3c;
+}
