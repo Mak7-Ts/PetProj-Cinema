@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header Example</title>
+    <title>Cinema Tickets</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <header class="header">
     <div class="header-left">
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox" class="toggle">
+            <div class="bars" id="bar1"></div>
+            <div class="bars" id="bar2"></div>
+            <div class="bars" id="bar3"></div>
+        </label>
         <div class="menu">
             MENU
         </div>
     </div>
     <div class="logo">
         <img src="icons/main_header_ticket_icon.png" alt="ticket-icon" class ="logo-icon">
-        <span class="logo-text">TicketsBox</span>
+        <span class="logo-text">Cinema Tickets</span>
     </div>
     <div class="header-right">
-        <div class="search-box">
-            <label>
-                <input type="text" placeholder="Search..." class="search-input">
-            </label>
-            <button class="search-button">Search</button>
-        </div>
         <div class="language">
             EN <span class="dropdown">▼</span>
         </div>
@@ -32,7 +32,95 @@
         </div>
     </div>
 </header>
+<div class="slider-container">
+    <div class="slider">
+        <div class="slide">
+            <img src="img/slider/1film.jpeg" alt="Film 1">
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </div>
+</div>
+<div class="film-section">
+    <div class="filter-buttons">
+        <button class="filter-btn">Ongoing</button>
+        <button class="filter-btn">Coming soon</button>
+    </div>
+
+    <div class="film-cards">
+        <div class="card">
+            <div class="card-details">
+                <img src="img/cards/frozen.jpg" alt="Film 1">
+            </div>
+            <button class="card-button">More info</button>
+        </div>
+        <div class="card">
+            <div class="card-details">
+                <img src="img/cards/seven.jpg" alt="Film 1">
+            </div>
+            <button class="card-button">More info</button>
+        </div>
+        <div class="card">
+            <div class="card-details">
+                <img src="img/cards/titanic.jpg" alt="Film 1">
+            </div>
+            <button class="card-button">More info</button>
+        </div>
+        <div class="card">
+            <div class="card-details">
+                <img src="img/cards/hotel_transylvania.jpg" alt="Film 1">
+            </div>
+            <button class="card-button">More info</button>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="#">watch</a></li>
+                    <li><a href="#">bag</a></li>
+                    <li><a href="#">shoes</a></li>
+                    <li><a href="#">dress</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" target="_blank"><img src="icons/facebook.png" alt="Facebook"></a>
+                    <a href="https://www.twitter.com" target="_blank"><img src="icons/twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com" target="_blank"><img src="icons/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com" target="_blank"><img src="icons/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
+
 

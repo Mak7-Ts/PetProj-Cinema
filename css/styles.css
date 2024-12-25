@@ -10,7 +10,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 20px;
-    background-color: #02103a;
+    background-color: #24262b;
     color: #ffffff;
     font-size: 16px;
 }
@@ -32,14 +32,54 @@ body {
 
 }
 
-.menu::before {
-    content: "\2630";
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    font-size: 18px;
+#checkbox {
+    display: none;
 }
+
+.toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: .3s;
+}
+
+.bars {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    transition-duration: .3s;
+}
+
+#checkbox:checked + .toggle .bars {
+    margin-left: 13px;
+}
+
+#checkbox:checked + .toggle #bar2 {
+    transform: rotate(135deg);
+    margin-left: 0;
+    transform-origin: center;
+    transition-duration: .3s;
+}
+
+#checkbox:checked + .toggle #bar1 {
+    transform: rotate(45deg);
+    transition-duration: .3s;
+    transform-origin: left center;
+}
+
+#checkbox:checked + .toggle #bar3 {
+    transform: rotate(-45deg);
+    transition-duration: .3s;
+    transform-origin: left center;
+}
+
 
 .logo {
     display: flex;
@@ -59,16 +99,15 @@ body {
     color: #ffffff;
 }
 
-.search {
-    cursor: pointer;
-}
 
 .language {
     display: flex;
     align-items: center;
     gap: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 20px;
 }
 
 .dropdown {
@@ -79,7 +118,10 @@ body {
     font-weight: bold;
     text-decoration: underline;
     cursor: pointer;
-    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 20px;
 }
 
 .search-box {
@@ -109,8 +151,290 @@ body {
     padding: 5px 15px;
     cursor: pointer;
     font-size: 16px;
+
 }
 
 .search-button:hover {
     background-color: #e74c3c;
+}
+
+/* Slider Container */
+.slider-container {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 65px;
+    background-color: #00103a;
+    margin: 10px auto;
+
+}
+
+/* Slider */
+.slider {
+    display: flex;
+    height: 100%;
+}
+
+/* Slide */
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Navigation Buttons */
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 34px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 45px;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button.prev:hover, button.next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.filter-btn {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: #008bf8;
+}
+
+/* Film Cards Section */
+.film-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next row */
+    justify-content: center; /* Ensures even spacing between cards */
+    gap: 20px; /* Spacing between cards */
+    padding: 20px;
+    width: 100%;
+}
+
+.film-card {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 1 1 calc(33.33% - 20px); /* 3 cards per row, accounting for gaps */
+    max-width: calc(33.33% - 20px); /* Maximum width per card */
+    display: flex;
+    align-items: center; /* Vertically align items in the center */
+    text-align: left; /* Left align text */
+    box-shadow: 0 4px 8px gray;
+}
+
+.film-card img {
+    width: 40%; /* Adjust the width of the image */
+    height: auto;
+    object-fit: contain;
+    margin-right: 20px; /* Space between the image and the text */
+}
+
+.film-details {
+    flex: 1; /* Makes the film details section take up the remaining space */
+}
+
+.film-title {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+.film-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.sessions {
+    font-size: 14px;
+    color: #888;
+    margin: 10px 0;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1170px;
+    margin:auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+}
+.footer{
+    background-color: #24262b;
+    padding: 70px 0;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+}
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+}
+.footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin:0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    display: block;
+}
+
+.social-links img {
+    width: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+.card {
+    width: 250px;
+    height: 390px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 1px;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+
+.card-details {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.card-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+/*Hover*/
+.card:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card:hover .card-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+}
+
+.card-details img{
+    width: 100%;
+    object-fit: fill;
+    border-radius: 20px;
 }
